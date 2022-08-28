@@ -1,8 +1,8 @@
-# FROM node
-# WORKDIR /app
+FROM node
+WORKDIR /app
 # COPY package*.json /app/
 # RUN npm install
-# COPY . /app
+COPY . /app
 # RUN npm run build
 
 FROM nginx
