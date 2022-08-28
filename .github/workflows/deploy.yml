@@ -37,4 +37,4 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           # 执行脚本
           script: |
-            ./deploy.sh
+            chmod 777 ./deploy.sh
