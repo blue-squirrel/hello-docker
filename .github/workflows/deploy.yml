@@ -25,8 +25,7 @@ jobs:
       - name: 打包镜像, 上传 Docker Hub
         run: |
           docker login -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
-          docker build --platform linux/amd64 -t fe-image:latest  .
-          docker tag fe-image:latest ${{ secrets.DOCKER_REPOSITORY }}
+          docker build -t ${{ secrets.DOCKER_REPOSITORY }} .
           docker push ${{ secrets.DOCKER_REPOSITORY }}
 
       - name: 登录服务器, 执行脚本
