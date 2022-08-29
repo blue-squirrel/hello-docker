@@ -16,6 +16,8 @@ COPY ./dist /usr/share/nginx/html
 
 EXPOSE 80
 
+# 暂时不管以下nginx.conf中nginx的配置，有点错误。。导致docker运行后会自动停止
+
 # FROM nginx
 
 # COPY dist/ /usr/share/nginx/html/
