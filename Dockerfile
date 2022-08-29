@@ -10,13 +10,13 @@
 # COPY --from=0 /app /usr/share/nginx/html
 # COPY --from=0 /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-# FROM nginx
-
-# COPY ./dist /usr/share/nginx/html
-
-# EXPOSE 80
-
 FROM nginx
 
-COPY dist/ /usr/share/nginx/html/
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./dist /usr/share/nginx/html
+
+EXPOSE 80
+
+# FROM nginx
+
+# COPY dist/ /usr/share/nginx/html/
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
