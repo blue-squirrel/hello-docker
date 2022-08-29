@@ -17,15 +17,25 @@
 # COPY dist/ /usr/share/nginx/html/
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# FROM node:14
+# COPY ./ /app
+# WORKDIR /app
+# RUN npm install && npm run build
+
+# FROM nginx
+
+# # 据说--from=0是上面构建出来的内容
+# COPY --from=0 /app/dist /usr/share/nginx/html
+# # COPY ./dist /usr/share/nginx/html
+
+# EXPOSE 80
+
 FROM node:14
 COPY ./ /app
 WORKDIR /app
 RUN npm install && npm run build
 
 FROM nginx
-
-# 据说--from=0是上面构建出来的内容
-COPY --from=0 /app/dist /usr/share/nginx/html
-# COPY ./dist /usr/share/nginx/html
-
-EXPOSE 80
+RUN mkdir /app
+COPY --from=0 /app/dist /app
+COPY nginx.conf /etc/nginx/nginx.conf
