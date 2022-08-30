@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="369，是我以前太温柔了，还是你叛逆期了？!"/>
+  <HelloWorld msg="369，是我以前太温柔了，还是你叛逆期了？/>
 </template>
 
 <script>
