@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1>路海长，青夜旷，越过群山追斜阳。</h1>
   </div>
 </template>
 
